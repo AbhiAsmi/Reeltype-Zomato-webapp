@@ -45,7 +45,7 @@ export default function UserLogin() {
 
       <div className="relative z-10 w-full max-w-md bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-lg">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
-          BINE AI REVENIT!
+           USER Log In
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -58,13 +58,13 @@ export default function UserLogin() {
           <input
             type="password"
             name="password"
-            placeholder="Parola"
+            placeholder="Passwoed"
             className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
 
           <div className="text-right">
-            <a href="#" className="text-green-600 text-sm hover:underline">
-              Ai uitat parola?
+            <a href="/user/register" className="text-green-600 text-sm hover:underline">
+              register?
             </a>
           </div>
 
@@ -81,25 +81,6 @@ export default function UserLogin() {
           <span className="text-sm text-gray-500">Sau</span>
           <div className="flex-1 h-px bg-gray-300"></div>
         </div>
-
-        <div className="flex justify-center gap-4">
-          <button className="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-100 transition">
-            <FaGoogle className="text-red-500" /> Google
-          </button>
-          <button className="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-100 transition">
-            <FaFacebook className="text-blue-600" /> Facebook
-          </button>
-        </div>
-
-        <p className="text-center text-sm text-gray-600 mt-6">
-          Nu ai un cont existent?{" "}
-          <a
-            href="/signup"
-            className="text-green-600 font-semibold hover:underline"
-          >
-            Inscrie-te
-          </a>
-        </p>
       </div>
     </div>
   );

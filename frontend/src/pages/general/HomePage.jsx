@@ -57,8 +57,8 @@ export default function HomePage() {
             </div>
           </div>
         )}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-12">
-          <div className="space-y-6 text-center md:text-left">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-16">
+          <div className="space-y-6 text-center ml-[100px] h-[80vh] pt-[80px] md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Enjoy healthy <br className="hidden md:block" /> and delicious <br className="hidden md:block" /> food.
             </h1>
