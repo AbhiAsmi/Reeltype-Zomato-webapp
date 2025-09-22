@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../../api";
 
 const CreateFood = () => {
   const navigate = useNavigate();
@@ -28,8 +29,8 @@ const CreateFood = () => {
     }
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/food/create",
+      const res = await API.post(
+        "/food/create",
         formData,
         {withCredentials:true,
         

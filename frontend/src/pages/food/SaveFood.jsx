@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import API from "../../api";
 
 export default function SaveFood() {
   const { id } = useParams();
@@ -11,8 +12,8 @@ export default function SaveFood() {
     const fetchSavedFood = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(
-          `http://localhost:3000/food/savedfood/${id}`,
+        const response = await API.get(
+          `/food/savedfood/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

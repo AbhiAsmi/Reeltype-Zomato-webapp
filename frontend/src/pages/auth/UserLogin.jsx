@@ -2,6 +2,7 @@ import React from "react";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API from "../../api";
 
 export default function UserLogin() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function UserLogin() {
     const password = e.target.elements.password.value;
 
     try {
-      const response = await axios.post("http://localhost:3000/user/login", {
+      const response = await API.post("/user/login", {
         email,
         password,
       });

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import API from "../../api";
 
 const FoodLogin = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const FoodLogin = () => {
     const password = formData.get("password");
 
     try {
-      const res = await axios.post("http://localhost:3000/user/food-login", {
+      const res = await API.post("/user/food-login", {
         email,
         password,
       });

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-
+import API from "../../api";
 const Profile = () => {
   const { id } = useParams(); // admin/foodPartner id from URL
   const [profile, setProfile] = useState(null);
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/foodpartner/profile/${id}`, {
+      API.get(`/foodpartner/profile/${id}`, {
         withCredentials: true,
       })
       .then((response) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { FaHeart, FaRegHeart, FaBookmark, FaRegBookmark, FaRegCommentDots, FaHome, FaSave } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import API from "../../api";
 const Home = () => {
   const userId = localStorage.getItem("userId"); 
   const [videos, setVideos] = useState([]);
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/food/fetch", { withCredentials: true });
+        const response = await API.get("/food/fetch", { withCredentials: true });
         setVideos(response.data.foodItems || []);
       } catch (error) {
         console.error("Error fetching videos:", error);
