@@ -5,16 +5,14 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const mongodb = require("./db/db");
 mongodb();
-
 const authRoutes = require("./routes/auth.routes");
 const foodRoutes = require("./routes/food.routes");
 const foodpartnerRoutes = require("./routes/foodpartner.routes");
-
-
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://reeltype-zomato-webapp-3pgw.vercel.app"
+  "https://reeltype-zomato-webapp-uy3a.vercel.app"
 ];
+
 app.use(cors({
   origin: function(origin, callback) {
     if (!origin) return callback(null, true); 
@@ -37,6 +35,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
