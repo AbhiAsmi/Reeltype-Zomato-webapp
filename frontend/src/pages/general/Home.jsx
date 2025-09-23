@@ -43,8 +43,8 @@ const Home = () => {
   const likeVideo = async item => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post(
-        "http://localhost:3000/food/like",
+      const response = await API.post(
+        "/food/like",
         { foodId: item._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -64,8 +64,8 @@ const Home = () => {
   const saveVideo = async item => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post(
-        "http://localhost:3000/food/save",
+      const response = await API.post(
+        "/food/save",
         { foodId: item._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
